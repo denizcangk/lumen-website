@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="container" style="padding-top:120px; text-align:center;">
+    <h1>Sepetim</h1>
+
+    {% if products %}
+        <div style="margin-top:40px;">
+
+            {% for product in products %}
+                <div style="margin-bottom:40px; background:#020617; padding:20px; border-radius:10px;">
+
+                    <h3>{{ product.name }}</h3>
+
+                    <p>Fiyat: {{ product.price }} ₺</p>
+
+                    <p>
+                        Adet: {{ product.quantity }}
+                    </p>
+
+                    <!-- BUTONLAR -->
+                    <div style="margin-top:10px;">
+
+                        <a href="{% url 'increase_cart' product.id %}" class="btn">➕</a>
+
+                        <a href="{% url 'decrease_cart' product.id %}" class="btn">➖</a>
+
+                        <a href="{% url 'remove_from_cart' product.id %}" class="btn" style="background:red; color:white;">
+                            ❌ Sil
+                        </a>
+
+                        <a href="/checkout/" class="btn" style="margin-top:30px;">
+                            Satın Al
+                        </a>
+
+                    </div>
+
+                    <p style="margin-top:10px;">
+                        Toplam: {{ product.total_price }} ₺
+                    </p>
+
+                </div>
+            {% endfor %}
+
+            <h2>Genel Toplam: {{ total }} ₺</h2>
+
+        </div>
+    {% else %}
+        <p>Sepetiniz boş.</p>
+    {% endif %}
+
+</section>
+{% endblock %}

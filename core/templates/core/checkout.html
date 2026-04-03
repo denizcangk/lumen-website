@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="container" style="padding-top:120px; text-align:center;">
+    <h1>Sipariş Tamamla</h1>
+
+    <form method="POST" style="margin-top:40px;">
+        {% csrf_token %}
+
+        <input type="text" name="full_name" placeholder="Ad Soyad" required
+               style="padding:10px; width:300px; margin-bottom:10px;"><br>
+
+        <input type="text" name="phone" placeholder="Telefon" required
+               style="padding:10px; width:300px; margin-bottom:10px;"><br>
+
+        <textarea name="address" placeholder="Adres" required
+                  style="padding:10px; width:300px; height:100px;"></textarea><br>
+
+        <button class="btn" style="margin-top:20px;">Siparişi Oluştur</button>
+    </form>
+</section>
+{% endblock %}

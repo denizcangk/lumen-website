@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lumen Robotik</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(15, 23, 42, 0.9);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .menu a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: #22c55e;
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #22c55e;
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="container">
+        <strong>Lumen Robotik</strong>
+
+        <div class="menu" style="float:right;">
+            <a href="/">Ana Sayfa</a>
+            <a href="/services/">Hizmetler</a>
+            <a href="/about/">Neden Biz</a>
+            <a href="/contact/">İletişim</a>
+            <a href="/products/">Ürünler</a>
+            <a href="/cart/">Sepet</a>
+        </div>
+    </div>
+</div>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

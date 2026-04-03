@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="container" style="text-align:center; padding:100px 20px;">
+    <h1>Lumen Robotik</h1>
+    <p>WE ARE BUILDING THE FUTURE</p>
+
+    <a href="/services/" style="
+        margin-top:20px;
+        display:inline-block;
+        padding:12px 25px;
+        background:#22c55e;
+        color:black;
+        text-decoration:none;
+        border-radius:6px;">
+        Hizmetlerimizi Gör
+    </a>
+</div>
+
+<!-- HİZMETLER -->
+<section>
+    <div class="container">
+        <h2>Hizmetlerimiz</h2>
+
+        <div style="
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            margin-top:40px;
+            flex-wrap:wrap;
+        ">
+
+            <div style="background:#020617; padding:25px; border-radius:12px; width:250px;">
+                <h3>Endüstriyel Otomasyon</h3>
+                <p>Üretim hatları için akıllı çözümler</p>
+            </div>
+
+            <div style="background:#020617; padding:25px; border-radius:12px; width:250px;">
+                <h3>Robot Kol Sistemleri</h3>
+                <p>Otomatik üretim ve robot entegrasyonu</p>
+            </div>
+
+            <div style="background:#020617; padding:25px; border-radius:12px; width:250px;">
+                <h3>PLC & SCADA</h3>
+                <p>Kontrol ve izleme sistemleri</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- NEDEN BİZ -->
+<section style="background:#020617;">
+    <div class="container">
+        <h2>Neden Lumen Robotik?</h2>
+
+        <p style="max-width:600px; margin:auto; margin-top:20px;">
+            Mühendislik odaklı yaklaşımımızla, işletmenize özel çözümler geliştiririz.
+            Hızlı, güvenilir ve yenilikçi sistemler sunarız.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

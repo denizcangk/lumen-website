@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<section class="container" style="padding-top:120px; text-align:center;">
+    <h1>Ürünler</h1>
+
+    <div class="services" style="margin-top:50px;">
+        {% for product in products %}
+            <div>
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <p>{{ product.price }} ₺</p>
+                <a href="{% url 'add_to_cart' product.id %}" class="btn">Sepete Ekle</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
