@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{ post.title }} | Lumen Robotik{% endblock %}
+
+{% block content %}
+
+{% block extra_meta %}
+<meta name="description" content="{{ post.meta_description }}">
+{% endblock %}
+
+<section>
+    <div class="container">
+
+        <h1>{{ post.title }}</h1>
+
+        {% if post.image %}
+            <img src="{{ post.image.url }}" style="width:100%; border-radius:10px; margin:20px 0;">
+        {% endif %}
+
+        <p style="opacity:0.7; margin-bottom:20px;">
+            {{ post.created_at }}
+        </p>
+
+        <div style="text-align:left; line-height:1.7;">
+            {{ post.content }}
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

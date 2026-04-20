@@ -4,9 +4,15 @@ from django.shortcuts import redirect
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 import json
 import iyzipay
 
+def pcb_service(request):
+    return render(request, 'core/pcb_service.html')
+def product_detail(request, slug):
+    product = get_object_or_404(Product, slug=slug)
+    return render(request, 'core/product_detail.html', {'product': product})
 def home(request):
     return render(request, 'core/home.html')
 
@@ -216,3 +222,7 @@ def payment_callback(request):
         order.save()
 
     return redirect('home')
+
+def product_detail(request, slug):
+    product = Product.objects.get(slug=slug)
+    return render(request, 'core/product_detail.html', {'product': product})

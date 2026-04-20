@@ -30,7 +30,7 @@ IYZICO_API_KEY = "sandbox-k3JINfl7YBn5jHio46Cn3L8e0OrCAmRm"
 IYZICO_SECRET_KEY = "sandbox-Sl3BI0lSY7vZ5OMaZ9hfNAX9geyKokQG"
 IYZICO_BASE_URL = "sandbox-api.iyzipay.com"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1","178.104.61.250", "lumenrobotik.com", "www.lumenrobotik.com"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -116,8 +117,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+

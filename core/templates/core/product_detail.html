@@ -1,0 +1,67 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{ product.name }} | Lumen Robotik{% endblock %}
+{% block description %}{{ product.description|truncatewords:20 }}{% endblock %}
+
+{% block content %}
+
+<section class="container" style="padding-top:120px; text-align:left;">
+
+    <div style="display:flex; flex-wrap:wrap; gap:50px; align-items:center;">
+
+        <!-- ÜRÜN GÖRSEL -->
+        <div style="flex:1;">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" style="width:100%; max-width:400px; border-radius:12px;">
+            {% endif %}
+        </div>
+
+        <!-- ÜRÜN BİLGİ -->
+        <div style="flex:1;">
+            <h1>{{ product.name }}</h1>
+
+            <p style="color:#94a3b8; margin-top:10px;">
+                {{ product.description }}
+            </p>
+
+            <h2 style="margin-top:20px;">
+                {{ product.price }} ₺
+            </h2>
+
+            <a href="{% url 'add_to_cart' product.id %}" class="btn" style="margin-top:20px; display:inline-block;">
+                Sepete Ekle
+            </a>
+
+            <p style="margin-top:20px; font-size:14px; color:#94a3b8;">
+                ✔ Endüstriyel kalite
+                <br>✔ Güvenilir tasarım
+                <br>✔ Türkiye üretim
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GÜVEN BLOĞU -->
+<section style="background:#020617;">
+    <div class="container">
+        <h2>Neden Bu Ürün?</h2>
+
+        <p style="max-width:600px; margin:auto;">
+            Bu ürün, endüstriyel kullanım için optimize edilmiş olup yüksek performans ve uzun ömür sağlar.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="container">
+        <h2>Özel Üretim İster misiniz?</h2>
+        <p>İhtiyacınıza özel PCB ve otomasyon çözümleri sunuyoruz.</p>
+
+        <a href="/contact/" class="btn">Teklif Al</a>
+    </div>
+</section>
+
+{% endblock %}

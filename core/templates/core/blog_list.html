@@ -1,0 +1,40 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="container" style="padding-top:120px;">
+    <h1>Blog</h1>
+
+    <div class="blog-grid">
+        {% for blog in blogs %}
+            <div class="blog-card">
+
+                {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="">
+                {% else %}
+                    <img src="{% static 'images/default-blog.jpg' %}">
+                {% endif %}
+
+                <h3>
+                    <a href="/blog/{{ blog.slug }}/">
+                        {{ blog.title }}
+                    </a>
+                </h3>
+
+                <p>{{ blog.content|truncatewords:20 }}</p>
+
+            </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+{% for post in posts %}
+    <div class="blog-card">
+        <a href="/blog/{{ post.slug }}/">
+            <h3>{{ post.title }}</h3>
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}
